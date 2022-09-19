@@ -7,10 +7,7 @@ import Planets from "../component/planets.jsx"
 const Home = () => (
 	<div>
 		<h3 className="text-danger"> Characters</h3>	
-		<div className="container-flex d-flex mt-5">
-			<Characters/>
-			<Characters/>
-			<Characters/>
+		<div className="d-flex mt-5 overflow-auto">
 			<Characters/>
 		</div>
 		<h3 className="text-danger"> Planets</h3>
