@@ -1,16 +1,41 @@
-import React from "react";
+import React, {useContext} from "react";  // #1 import useContext de React
 import { Link } from "react-router-dom";
+import {Context} from "../store/appContext.jsx"; // #2 Traer el context
 
  const Navbar = () => {
+	const {store, actions}= useContext(Context)  // #3 Llamar el context
 	return (
 		<nav className="navbar navbar-light bg-light mb-3">
 			<Link to="/">
 				<span className="navbar-brand mb-0 h1">Star Wars</span>
 			</Link>
+
+			{
+			// Boton Usando Bootstrap aca abajo
+			}
 			<div className="ml-auto">
-				<Link to="/demo">
-					<button className="btn btn-primary">Favorites</button>
-				</Link>
+			<div className="dropdown">
+				<button 
+				className="btn btn-info dropdown-toggle" 
+				type="button" 
+				data-bs-toggle="dropdown" 
+				aria-expanded="false">
+					Favorites
+				</button>
+				<ul className="dropdown-menu bg-dark">
+					{store.favorites.map((item , index) =>{ 
+					return(
+						<li className="bg-dark text-light" key={index}> {item} {" "}
+							<span className="text-light" onClick={()=>store.actions.eliminar(index)}>X</span>
+								{
+									//FALTA DEFINIR ACTION.ELIMINAR PARA QUE ESTO FUNCIONE
+								}
+						</li>
+					)
+					}
+					)}
+				</ul>
+			</div>
 			</div>
 		</nav>
 	);

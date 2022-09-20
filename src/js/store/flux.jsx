@@ -3,9 +3,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 		store: {
 
 			charactersCard: [] ,
-			charDetails: [],
-			planets: [] ,
-			vehicles: [] ,
+			charactersDetails: [],
+			planetsCard: [] ,
+			planetsDetails: [] ,
 			favorites: [] , 
 		},
 		actions: {
@@ -14,15 +14,31 @@ const getState = ({ getStore, getActions, setStore }) => {
 				fetch("https://www.swapi.tech/api/people/")
 				.then(res => res.json())
 				.then(data => setStore({charactersCard: data.results}))
-				
-			},
+				},
 
-			GetIdCharacters: (id) => {
+			getIdCharacters: (id) => {
 				fetch("https://www.swapi.tech/api/people/"+id)
 				.then(res => res.json())
-				.then(data => console.log(data))
-				.catch(err => console.error(err))
+				.then(data => setStore({charactersDetails: data.results}))
 			},
+
+			getPlanets: () => {
+				fetch("https://www.swapi.tech/api/planets/")
+				.then(res => res.json())
+				.then(data => setStore({planetsCard: data.results}))
+				},
+
+			getIdPlanets: (id) => {
+				fetch("https://www.swapi.tech/api/planets/"+id)
+				.then(res => res.json())
+				.then(data => setStore({planetsDetails: data.results}))
+			},
+
+			addFav: (item) =>{
+				const store = getStore();
+				const newFav = store.favorites.concat(item);
+				setStore({favorites: newFav});
+			}
 
 			}
 		}
