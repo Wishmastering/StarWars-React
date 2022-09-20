@@ -24,7 +24,7 @@ const Characters = () => {
 
                     <button  className="btn btn-danger float-end" onClick={()=> {actions.addFav(charCard.name)}}>🤍</button>
                     {
-                    //<button className="btn btn-primary bg-dark"              onClick={() => {actions.setearFavorite(item.name)}}>🤍</button>
+                    
                         // Pendiente poder hacer el corazon "Del color que se desee o algo similar"
                     }
 

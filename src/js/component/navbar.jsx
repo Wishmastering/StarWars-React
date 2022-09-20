@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 import {Context} from "../store/appContext.jsx"; // #2 Traer el context
 
  const Navbar = () => {
-	const {store, actions}= useContext(Context)  // #3 Llamar el context
+	const {store, actions}= useContext(Context)  // #3 Llamar el context  
 	return (
-		<nav className="navbar navbar-light bg-light mb-3">
+		<nav className="navbar navbar-light bg-light mb-3 justify-content-around">
 			<Link to="/">
 				<span className="navbar-brand mb-0 h1">Star Wars</span>
 			</Link>
@@ -25,8 +25,8 @@ import {Context} from "../store/appContext.jsx"; // #2 Traer el context
 				<ul className="dropdown-menu bg-dark">
 					{store.favorites.map((item , index) =>{ 
 					return(
-						<li className="bg-dark text-light" key={index}> {item} {" "}
-							<span className="text-light" onClick={()=>store.actions.eliminar(index)}>X</span>
+						<li className="bg-dark text-light" key={index}> {item} 
+							<button className="text-light bg-secondary float-end" onClick={()=>store.actions.eliminar(index)}>X</button>
 								{
 									//FALTA DEFINIR ACTION.ELIMINAR PARA QUE ESTO FUNCIONE
 								}

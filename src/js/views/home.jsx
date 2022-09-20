@@ -17,9 +17,7 @@ const Home = () => (
 		}
 		<div className="container-flex d-flex mt-5">
 			<Planets/>
-			<Planets/>
-			<Planets/>
-			<Planets/>
+		
 		</div>
 	</div>
 );
