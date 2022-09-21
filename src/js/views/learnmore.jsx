@@ -1,42 +1,37 @@
-import React from "react";
+import React, {useEffect, useState} from "react"; 
 import "../../styles/home.css";
+import {useParams} from "react-router-dom"
 
-{
-	// PORQUE NO ME SIRVE EL STYLE DEL "hr"
-}
 
-const Learnmore = () => (
+const Learnmore = () => {
+	const params = useParams();
+	console.log(params);
+	const {character, setCharacter} = useState("")
+	useEffect( ()=>{
+		fetch("https://www.swapi.tech/api/people/"+params.id)
+		.then(res => res.json())
+		.then(data => setCharacter(data))
+		.catch(err => err);
+		console.log(character)
+	}, [] )
+	
+
+	return(
 	<div>
 		<div className="row">
 			<div className="col-4" style={{width: 19 + 'rem'}}>
-				<img src="https://upload.wikimedia.org/wikipedia/en/6/6d/Tatooine_%28fictional_desert_planet%29.jpg" 
-				alt="Tatooine"/>
+			<img src={"https://starwars-visualguide.com/assets/img/characters/"+ params.id +".jpg"} 
+				alt="Tatooine" className="container"/>
 			</div>
 			<div className="col-2"></div>
 			<div className="col-6">
-				<p>Lorem, ipsum dolor sit amet consectetur 
-					adipisicing elit. Commodi neque deserunt 
-					ipsam porro! Quos, perferendis cum. Nihil
-				 	possimus eveniet natus qui animi cum ipsum 
-					quaerat voluptas, magnam nisi rerum sint. 
-					Facilis eligendi sint veritatis reprehenderit
-					repellat, sequi aut ullam inventore nostrum,
-					sapiente cum neque placeat laboriosam expedita 
-					veniam unde cupiditate nulla nihil est at fugit
-					quam quod deserunt possimus. Amet dignissimos 
-					porro corrupti corporis, itaque labore sequi 
-					ducimus, exercitationem molestias ratione quae
-					voluptatum esse culpa numquam officia. 
-					Doloribus, a repudiandae! Aliquam fugit, 
-					repellat sint qui dolorem omnis, porro
-					expedita dolore modi numquam voluptatibus 
-					 animi ea. Repellat suscipit qui possimus et!</p>
+				<p>Hola</p>
 			</div>
 		</div>
 		<hr className="hrStyle" style={{color: 'red'}}/>
 		<div className="row">
 			<div className="col-2 fontRed text-center">Name
-				<div className="text-center">Luke Skywalker</div>
+				<div className="text-center"></div>
 			</div>
 			<div className="col-2 text-center"> Birth Year
 				<div>19BBY</div>
@@ -57,6 +52,6 @@ const Learnmore = () => (
 
 		</div>
 	</div>
-);
+);}
 
 export default Learnmore;

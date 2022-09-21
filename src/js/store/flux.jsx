@@ -34,13 +34,23 @@ const getState = ({ getStore, getActions, setStore }) => {
 				.then(data => setStore({planetsDetails: data.results}))
 			},
 
-			addFav: (item) =>{
+			addFav: (item) => {
 				const store = getStore();
 				const newFav = store.favorites.concat(item);
 				setStore({favorites: newFav});
-			}
+			},
+			
+			deleteFav: (item) => {
+				const store = getStore();
+				let newFav = store.favorites.filter((favorChar =>{
+					if (item !== index) {
+						return favorChar;
+					}
+					setStore({favorites: newFav})
+				})
+			
 
-			}
+			
 		}
 	};
 

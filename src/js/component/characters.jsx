@@ -18,7 +18,7 @@ const Characters = () => {
                     <p className="card-text"> {charCard.gender}</p>
                     <p className="card-text"> {charCard.hair_color}</p>
                     <p className="card-text"> {charCard.eye_color}</p>
-                    <Link to="/learnmore">
+                    <Link to={"/learnmore/"+charCard.uid}>
                         <a href="#" className="btn btn-primary float-start">Learn More!</a>
                     </Link>
 

@@ -6,9 +6,9 @@ const Planets = () => {
     
 	return (
         <>
-           {store.planetsCard.map((planetCard) => { 
+           {store.planetsCard.map((planetCard, i) => { 
                return(
-           <div className="card container col-4 mx-auto" style={{width: 18 + 'rem'}}>
+           <div className="card container col-4 mx-auto" style={{width: 18 + 'rem'}} key={i}>
              {
              //   "https://starwars-visualguide.com/assets/img/planets/"+ item.uid +".jpg"
              }
