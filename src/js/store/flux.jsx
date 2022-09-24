@@ -42,7 +42,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			
 			deleteFav: (item) => {
 				const store = getStore();
-				let newFav = store.favorites.filter((favorChar =>{
+				let newFav = store.favorites.filter((favorChar) =>{
 					if (item !== index) {
 						return favorChar;
 					}

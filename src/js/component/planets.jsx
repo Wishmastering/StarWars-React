@@ -19,8 +19,8 @@ const Planets = () => {
                    <p className="card-text"> {planetCard.gender}</p>
                    <p className="card-text"> {planetCard.hair_color}</p>
                    <p className="card-text"> {planetCard.eye_color}</p>
-                   <Link to="/learnmore">
-                       <a href="#" className="btn btn-primary float-start">Learn More!</a>
+                   <Link to={"/learnmoreplanet/"+planetCard.uid} className="btn btn-primary float-start">
+                       Learn More!
                    </Link>
 
                    <p className="fa fa-heart text-danger float-end"></p>

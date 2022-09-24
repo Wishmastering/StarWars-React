@@ -18,8 +18,8 @@ const Characters = () => {
                     <p className="card-text"> {charCard.gender}</p>
                     <p className="card-text"> {charCard.hair_color}</p>
                     <p className="card-text"> {charCard.eye_color}</p>
-                    <Link to={"/learnmore/"+charCard.uid}>
-                        <a href="#" className="btn btn-primary float-start">Learn More!</a>
+                    <Link to={"/learnmore/"+charCard.uid} className="btn btn-primary float-start">
+                        Learn More!
                     </Link>
 
                     <button  className="btn btn-danger float-end" onClick={()=> {actions.addFav(charCard.name)}}>🤍</button>
