@@ -23,7 +23,7 @@ const Planets = () => {
                        Learn More!
                    </Link>
 
-                   <p className="fa fa-heart text-danger float-end"></p>
+                   <button className="btn btn-danger float-end" onClick={()=> {actions.addFav(planetCard.name)}}>🤍</button>
                    
                </div>
            </div>

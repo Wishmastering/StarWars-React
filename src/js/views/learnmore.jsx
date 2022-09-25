@@ -6,14 +6,16 @@ import {useParams} from "react-router-dom"
 const Learnmore = () => {
 	const params = useParams();
 	console.log(params);
-	const {character, setCharacter} = useState("")
+	const [character, setCharacter] = useState([])
 	useEffect( ()=>{
 		fetch("https://www.swapi.tech/api/people/"+params.id)
-		.then(res => res.json())
-		.then(data => setCharacter(data))
-		.catch(err => err);
-		console.log(character)
+		.then((res) => res.json())
+		.then((data) => setCharacter(data.result.properties))
+		// .catch(err => err);
+		
 	}, [] )
+
+	console.log(character)
 	
 
 	return(
@@ -25,28 +27,28 @@ const Learnmore = () => {
 			</div>
 			<div className="col-2"></div>
 			<div className="col-6">
-				<p>Hola</p>
+				
 			</div>
 		</div>
 		<hr className="hrStyle" style={{color: 'red'}}/>
 		<div className="row">
 			<div className="col-2 fontRed text-center">Name
-				<div className="text-center"></div>
+				<div className="text-center">{character.name}</div>
 			</div>
 			<div className="col-2 text-center"> Birth Year
-				<div>19BBY</div>
+				<div>{character.birth_year}</div>
 			</div>
 			<div className="col-2 text-center"> Gender
-				<div className="text-center">Male</div>
+				<div className="text-center">{character.gender}</div>
 			</div>
 			<div className="col-2 text-center"> Height
-				<div className="text-center">172</div>
+				<div className="text-center">{character.height}</div>
 			</div>
 			<div className="col-2 text-center"> Skin Color
-				<div className="text-center">Fair</div>
+				<div className="text-center">{character.skin_color}</div>
 			</div>
 			<div className="col-2 text-center"> Eye Color
-				<div className="text-center">Blue</div>
+				<div className="text-center">{character.eye_color}</div>
 			</div>
 			
 

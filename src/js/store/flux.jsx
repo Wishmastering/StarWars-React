@@ -43,10 +43,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 			deleteFav: (item) => {
 				const store = getStore();
 				let newFav = store.favorites.filter((favorChar) =>{
-					if (item !== index) {
+					if (item !== favorChar) {
 						return favorChar;
 					}
 					setStore({favorites: newFav})
+					console.log(favorites)
 				})
 			}
 
