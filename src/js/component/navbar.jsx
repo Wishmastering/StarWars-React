@@ -26,7 +26,7 @@ import {Context} from "../store/appContext.jsx"; // #2 Traer el context
 					{store.favorites.map((item , index) =>{ 
 					return(
 						<li className="bg-dark text-light" key={index}> {item} 
-							<button className="text-light bg-secondary float-end" onClick={()=>store.actions.eliminar(index)}>X</button>
+							<button className="text-light bg-secondary float-end" onClick={()=>actions.deleteFav(item)}>X</button>
 								{
 									//FALTA DEFINIR ACTION.ELIMINAR PARA QUE ESTO FUNCIONE
 								}

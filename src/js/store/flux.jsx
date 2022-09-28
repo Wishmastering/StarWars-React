@@ -46,9 +46,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 					if (item !== favorChar) {
 						return favorChar;
 					}
-					setStore({favorites: newFav})
-					console.log(favorites)
 				})
+				setStore({favorites: newFav})
 			}
 
 			}
