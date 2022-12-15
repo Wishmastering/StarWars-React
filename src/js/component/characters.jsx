@@ -10,7 +10,7 @@ const Characters = () => {
          <>
             {store.charactersCard.map((charCard, i) => { 
                 return(
-            <div className="card container col-4 mx-auto" style={{width: 18 + 'rem'}} key={i}>
+            <div className="card container col-4 mx-auto bg-dark text-primary" style={{width: 18 + 'rem'}} key={i}>
                 <img src={"https://starwars-visualguide.com/assets/img/characters/"+ charCard.uid +".jpg"} 
                     className="card-img-top" alt="Baby Rigo"/>
                 <div className="card-body">
